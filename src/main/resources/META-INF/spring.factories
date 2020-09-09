@@ -1,0 +1,5 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.chanjet.openapi.java.demo.config.ChanjetClientConfig,\
+com.chanjet.openapi.java.demo.config.OpenApiConfig,\
+com.chanjet.openapi.java.demo.config.Swagger2Config
