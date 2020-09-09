@@ -147,7 +147,7 @@ public class IntegrationController {
      * @return
      * @throws ChanjetApiException
      */
-    @ApiOperation(value = "获取好会计的账套列表", httpMethod = "POST")
+    @ApiOperation(value = "获取好会计的账套列表", httpMethod = "GET")
     @GetMapping("/accounting/accountBook/list")
     public AccountBookListResponse accountBookList(@RequestHeader("openToken") String openToken) throws ChanjetApiException {
         AccountBookListRequest accountBookListRequest = new AccountBookListRequest();
@@ -166,7 +166,7 @@ public class IntegrationController {
      * @throws ChanjetApiException
      * @throws IOException
      */
-    @ApiOperation(value = "获取单点登录地址", httpMethod = "POST")
+    @ApiOperation(value = "获取单点登录地址", httpMethod = "GET")
     @GetMapping("getLoginUrl")
     public GetLoginUrlResponse login(@RequestHeader("openToken") String openToken, @RequestParam("state") String state) throws ChanjetApiException {
         GetLoginUrlRequest getLoginUrlRequest = new GetLoginUrlRequest();
