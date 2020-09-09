@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.chanjet</groupId>
     <artifactId>chanjet-openapi-java-demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-RELEASE</version>
     <name>chanjet-openapi-java-demo</name>
     <description>Chanjet Openapi Java Demo</description>
 
