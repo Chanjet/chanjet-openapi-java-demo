@@ -16,7 +16,7 @@ import java.io.IOException;
 
 /**
  * 集成模块示例demo
- * 1、授权，授权流程参考
+ * 1、授权，授权流程参考 https://dev.chanjet.com/docs/quickstart/ksrm/dqyhsq
  * 2、授权后调用接口
  * 3、单点登录，单点登录参考
  *
