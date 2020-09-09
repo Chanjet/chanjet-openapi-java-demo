@@ -9,7 +9,7 @@
 
 ## 快速使用
 
-1. 修改该项目下resources目录下的配置文件
+1. 修改该项目下resources目录下application.yml配置文件
 ```yaml
 chanjet:
   openapi:
