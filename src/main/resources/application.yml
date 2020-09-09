@@ -1,6 +1,6 @@
 chanjet:
   openapi:
-    gatewayUrl: https://inte-openapi.chanjet.com #开放平台网关地址
+    gatewayUrl: https://openapi.chanjet.com #开放平台网关地址
     connectTimeout: 3000 #连接超时时间，单位ms
     readTimeout: 15000 #读取超时时间，单位ms
     appKey: ... ... #需要填写在开放平台申请的appKey

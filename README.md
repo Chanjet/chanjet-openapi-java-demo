@@ -20,4 +20,4 @@ chanjet:
     appSecret: #需要填写在开放平台申请的appSecret
 ```
 2. 运行ChanjetOpenapiJavaDemoApplication的main方法启动
-3. 该项目使用了swagger2，可以在项目启动后访问http://localhost:8080/swagger-ui.html#/，查看示例demo的接口
+3. 该项目使用了swagger2，可以在项目启动后可通过swagger地址查看接口信息，swagger地址：http://localhost:8080/swagger-ui.html#/
