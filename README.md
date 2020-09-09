@@ -1,4 +1,4 @@
-# chanjet-open-sdk
+# Chanjet-Openapi-Java-Demo
 
 畅捷通开放平台Java示例项目，需要先了解开放平台[Chanjet-Openapi-Java-Sdk](https://github.com/Chanjet/chanjet-openapi-java-sdk)
 
