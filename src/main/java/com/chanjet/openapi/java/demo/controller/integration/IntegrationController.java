@@ -5,9 +5,18 @@ import com.chanjet.openapi.java.demo.request.AccountBookListRequest;
 import com.chanjet.openapi.java.demo.response.AccountBookListResponse;
 import com.chanjet.openapi.sdk.java.ChanjetClient;
 import com.chanjet.openapi.sdk.java.domain.*;
+import com.chanjet.openapi.sdk.java.domain.ydz.CashJournalAddContent;
+import com.chanjet.openapi.sdk.java.domain.ydz.CashJournalBatchAddContent;
+import com.chanjet.openapi.sdk.java.domain.ydz.CashJournalCheckingContent;
 import com.chanjet.openapi.sdk.java.exception.ChanjetApiException;
 import com.chanjet.openapi.sdk.java.request.*;
+import com.chanjet.openapi.sdk.java.request.ydz.CashJournalAddRequest;
+import com.chanjet.openapi.sdk.java.request.ydz.CashJournalBatchAddRequest;
+import com.chanjet.openapi.sdk.java.request.ydz.CashJournalCheckingRequest;
 import com.chanjet.openapi.sdk.java.response.*;
+import com.chanjet.openapi.sdk.java.response.ydz.CashJournalAddResponse;
+import com.chanjet.openapi.sdk.java.response.ydz.CashJournalBatchAddResponse;
+import com.chanjet.openapi.sdk.java.response.ydz.CashJournalCheckingResponse;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -176,5 +185,68 @@ public class IntegrationController {
         getLoginUrlRequest.addQueryParam("state", state);
         getLoginUrlRequest.setRequestUri("/authSite/sso/getLoginUrl");
         return chanjetClient.execute(getLoginUrlRequest);
+    }
+
+    /**
+     * 新增日记账
+     *
+     * @param openToken
+     * @param cashJournalAddContent
+     * @return
+     * @throws ChanjetApiException
+     */
+    @ApiOperation(value = "新增日记账", httpMethod = "POST")
+    @PostMapping("cashJournalAdd")
+    public CashJournalAddResponse cashJournalAdd(@RequestHeader("openToken") String openToken, @RequestBody CashJournalAddContent cashJournalAddContent) throws ChanjetApiException {
+        CashJournalAddRequest cashJournalAddRequest = new CashJournalAddRequest();
+        cashJournalAddRequest.setAppKey(openApiConfig.getAppKey());
+        cashJournalAddRequest.setAppSecret(openApiConfig.getAppSecret());
+        cashJournalAddRequest.setOpenToken(openToken);
+        cashJournalAddRequest.setBizContent(cashJournalAddContent);
+        //bookid需要指定对应的账套
+        cashJournalAddRequest.setRequestUri("/accounting/acctgplt/CashJournal/add/{bookid}");
+        return chanjetClient.execute(cashJournalAddRequest);
+    }
+
+    /**
+     * 批量新增日记账
+     *
+     * @param openToken
+     * @param cashJournalBatchAddContent
+     * @return
+     * @throws ChanjetApiException
+     */
+    @ApiOperation(value = "批量新增日记账", httpMethod = "POST")
+    @PostMapping("cashJournalBatchAdd")
+    public CashJournalBatchAddResponse cashJournalBatchAdd(@RequestHeader("openToken") String openToken, @RequestBody CashJournalBatchAddContent cashJournalBatchAddContent) throws ChanjetApiException {
+        CashJournalBatchAddRequest cashJournalBatchAddRequest = new CashJournalBatchAddRequest();
+        cashJournalBatchAddRequest.setAppKey(openApiConfig.getAppKey());
+        cashJournalBatchAddRequest.setAppSecret(openApiConfig.getAppSecret());
+        cashJournalBatchAddRequest.setOpenToken(openToken);
+        cashJournalBatchAddRequest.setBizContent(cashJournalBatchAddContent);
+        //bookid需要指定对应的账套
+        cashJournalBatchAddRequest.setRequestUri("/accounting/acctgplt/CashJournal/batchAdd/{bookid}");
+        return chanjetClient.execute(cashJournalBatchAddRequest);
+    }
+
+    /**
+     * 对账接口
+     *
+     * @param openToken
+     * @param cashJournalCheckingContent
+     * @return
+     * @throws ChanjetApiException
+     */
+    @ApiOperation(value = "对账接口", httpMethod = "POST")
+    @PostMapping("cashJournalChecking")
+    public CashJournalCheckingResponse cashJournalChecking(@RequestHeader("openToken") String openToken, @RequestBody CashJournalCheckingContent cashJournalCheckingContent) throws ChanjetApiException {
+        CashJournalCheckingRequest cashJournalCheckingRequest = new CashJournalCheckingRequest();
+        cashJournalCheckingRequest.setAppKey(openApiConfig.getAppKey());
+        cashJournalCheckingRequest.setAppSecret(openApiConfig.getAppSecret());
+        cashJournalCheckingRequest.setOpenToken(openToken);
+        cashJournalCheckingRequest.setBizContent(cashJournalCheckingContent);
+        //bookid需要指定对应的账套
+        cashJournalCheckingRequest.setRequestUri("/accounting/acctgplt/CashJournal/checking/{bookid}");
+        return chanjetClient.execute(cashJournalCheckingRequest);
     }
 }

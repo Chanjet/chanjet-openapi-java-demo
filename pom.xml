@@ -27,7 +27,7 @@
         <dependency>
             <groupId>com.chanjet</groupId>
             <artifactId>chanjet-openapi-java-sdk</artifactId>
-            <version>1.0.1-RELEASE</version>
+            <version>1.0.4-RELEASE</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
