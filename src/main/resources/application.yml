@@ -5,3 +5,4 @@ chanjet:
     readTimeout: 15000 #读取超时时间，单位ms
     appKey: ... ... #需要填写在开放平台申请的appKey
     appSecret: ... ... #需要填写在开放平台申请的appSecret
+    signKey: ... ... #需要去开放平台自主填写

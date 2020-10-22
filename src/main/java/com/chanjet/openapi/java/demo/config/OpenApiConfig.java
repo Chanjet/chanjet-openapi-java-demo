@@ -32,6 +32,10 @@ public class OpenApiConfig {
      * 读取超时时间，单位ms
      */
     private int readTimeout;
+    /**
+     * 加签key，用于加签
+     */
+    private String signKey;
 
     public String getGatewayUrl() {
         return gatewayUrl;
@@ -73,14 +77,23 @@ public class OpenApiConfig {
         this.readTimeout = readTimeout;
     }
 
+    public String getSignKey() {
+        return signKey;
+    }
+
+    public void setSignKey(String signKey) {
+        this.signKey = signKey;
+    }
+
     @Override
     public String toString() {
         return "OpenApiConfig{" +
                 "gatewayUrl='" + gatewayUrl + '\'' +
                 ", appKey='" + appKey + '\'' +
                 ", appSecret='" + appSecret + '\'' +
-                ", connectTimeout='" + connectTimeout + '\'' +
-                ", readTimeout='" + readTimeout + '\'' +
+                ", connectTimeout=" + connectTimeout +
+                ", readTimeout=" + readTimeout +
+                ", signKey='" + signKey + '\'' +
                 '}';
     }
 }

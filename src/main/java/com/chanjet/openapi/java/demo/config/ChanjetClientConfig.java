@@ -15,6 +15,6 @@ import org.springframework.context.annotation.Configuration;
 public class ChanjetClientConfig {
     @Bean
     public ChanjetClient chanjetClient(OpenApiConfig openApiConfig) {
-        return new DefaultChanjetClient(openApiConfig.getGatewayUrl(), openApiConfig.getConnectTimeout(), openApiConfig.getReadTimeout());
+        return new DefaultChanjetClient(openApiConfig.getGatewayUrl(), openApiConfig.getSignKey());
     }
 }
