@@ -3,6 +3,21 @@ chanjet:
     gatewayUrl: https://openapi.chanjet.com #开放平台网关地址
     connectTimeout: 3000 #连接超时时间，单位ms
     readTimeout: 15000 #读取超时时间，单位ms
-    appKey: ... ... #需要填写在开放平台申请的appKey
-    appSecret: ... ... #需要填写在开放平台申请的appSecret
-    signKey: ... ... #需要去开放平台自主填写
+    appKey:  #需要填写在开放平台申请的appKey
+    appSecret:  #需要填写在开放平台申请的appSecret
+    secret:  #秘钥，用于解密，需要去开放平台自主填写，然后配置在此处
+    redirectUri:  #Oauth重定向地址，需要去开放平台自主填写，然后配置在此处
+
+spring:
+  datasource:
+    url: jdbc:postgresql://ip:port/dbname  #数据库的jdbc url
+    username:   #数据库的用户名
+    password:  #数据库的密码
+    driverClassName: org.postgresql.Driver  #数据库的驱动，项目默认使用postgreSql
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl

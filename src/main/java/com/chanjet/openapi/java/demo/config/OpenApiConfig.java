@@ -1,5 +1,6 @@
 package com.chanjet.openapi.java.demo.config;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @author zsc
  * @create 2020/9/8 2:51 下午
  **/
+@Data
 @Configuration
 @ConfigurationProperties("chanjet.openapi")
 public class OpenApiConfig {
@@ -33,67 +35,11 @@ public class OpenApiConfig {
      */
     private int readTimeout;
     /**
-     * 加签key，用于加签
+     * 加签key，用于加签和解密
      */
-    private String signKey;
-
-    public String getGatewayUrl() {
-        return gatewayUrl;
-    }
-
-    public void setGatewayUrl(String gatewayUrl) {
-        this.gatewayUrl = gatewayUrl;
-    }
-
-    public String getAppKey() {
-        return appKey;
-    }
-
-    public void setAppKey(String appKey) {
-        this.appKey = appKey;
-    }
-
-    public String getAppSecret() {
-        return appSecret;
-    }
-
-    public void setAppSecret(String appSecret) {
-        this.appSecret = appSecret;
-    }
-
-    public int getConnectTimeout() {
-        return connectTimeout;
-    }
-
-    public void setConnectTimeout(int connectTimeout) {
-        this.connectTimeout = connectTimeout;
-    }
-
-    public int getReadTimeout() {
-        return readTimeout;
-    }
-
-    public void setReadTimeout(int readTimeout) {
-        this.readTimeout = readTimeout;
-    }
-
-    public String getSignKey() {
-        return signKey;
-    }
-
-    public void setSignKey(String signKey) {
-        this.signKey = signKey;
-    }
-
-    @Override
-    public String toString() {
-        return "OpenApiConfig{" +
-                "gatewayUrl='" + gatewayUrl + '\'' +
-                ", appKey='" + appKey + '\'' +
-                ", appSecret='" + appSecret + '\'' +
-                ", connectTimeout=" + connectTimeout +
-                ", readTimeout=" + readTimeout +
-                ", signKey='" + signKey + '\'' +
-                '}';
-    }
+    private String secret;
+    /**
+     * Oauth重定向地址
+     */
+    private String redirectUri;
 }
