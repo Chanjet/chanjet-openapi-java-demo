@@ -44,3 +44,4 @@ spring:
 6. 身份验证需要将UserAuthController暴露的接口地址配置到开放平台的Oauth回调地址的配置中。
 7. 应用开通时会自动下发临时授权码到消息接收地址。
 8. 身份验证时用户授权完成后，会自动携带code跳转到Oauth回调地址。
+9. 可信域名验证处理：替换src/main/resources/static下的CHANJET_CHECK.txt文件为从开放平台下载的校验文件。将当前域名添加到开放平台的可信域名管理中。
